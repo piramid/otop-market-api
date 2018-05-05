@@ -3,6 +3,15 @@ const router = express.Router()
 
 module.exports = router
 
+router.post('/', async (req, res) =>{
+  if(req.body.email === 'pornchai@gmail.com' && req.body.password === '1234'){
+    res.send({ok: true})
+    return
+  }
+  res.send({ok: false})
+ }
+) //post
+
 router.post('/login', async (req, res) => {
   // 1. check require
   if (!req.body.user || !req.body.pass) {
